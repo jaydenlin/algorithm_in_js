@@ -31,12 +31,13 @@ graph[0].map(function(v, index){
 });
 //console.log(dist_to_mst);
 
+//因為有graph.length個點，所以 dist_to_mst 要更新graph.length次
 while(count < graph.length){
     min = Infinity;
     //掃dist_to_mst，找出下一個要加入的點，設定成vnear
     //從b開始找，所以設定i=1,
     for(var i = 1; i < dist_to_mst.length; i++){
-
+        //找出最小的距離的點，並且不在choosed[i]中，則設定成vnear
         if(0 <= dist_to_mst[i] < min){
             if(choosed[i]!==true){
                 min = dist_to_mst[i];        
@@ -46,6 +47,7 @@ while(count < graph.length){
         choosed[vnear] = true;
         //透過vnear更新目前的dist_to_mst
         for(var j=1; j < dist_to_mst.length; j++){
+            //若發現透過vnear到j的距離更短
             if(graph[j][vnear] < dist_to_mst[j] && j!==vnear){
                 //更新到j的距離
                 dist_to_mst[j] = graph[j][vnear];
@@ -59,4 +61,6 @@ while(count < graph.length){
 }
 
 console.log(dist_to_mst);
-console.log(nearest_vertex);
+console.log(nearest_vertex);//nearest_vertex[2]=5，代表c連到f
+
+//Prim演算法，就是不斷更新dist_to_mst的過程
