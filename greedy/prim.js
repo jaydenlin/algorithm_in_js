@@ -60,7 +60,7 @@ while(count < graph.length){
     count++;
 }
 
-console.log(dist_to_mst);
+//console.log(dist_to_mst);
 console.log(nearest_vertex);//nearest_vertex[2]=5，代表c連到f
 
 //Prim演算法，就是不斷更新dist_to_mst的過程
