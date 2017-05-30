@@ -64,3 +64,4 @@ while(count < graph.length){
 console.log(nearest_vertex);//nearest_vertex[2]=5，代表c連到f
 
 //Prim演算法，就是不斷更新dist_to_mst的過程
+//以點為主體，一個一個點加上去
