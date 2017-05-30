@@ -28,7 +28,7 @@ var disjoint_set = [];
 disjoint_set=[-1,-1,-1,-1,-1,-1,-1];//-1代表root
 var findRoot = (vertex)=>{
    if(disjoint_set[vertex] === -1){
-      return disjoint_set[vertex];
+      return vertex;
    }   
    return disjoint_set[vertex]=findRoot(disjoint_set[vertex]);//把tree壓平的技巧，把找到的root直接設成parent
 }
@@ -38,7 +38,7 @@ var st = [0,2,0,1,1,2,0,3];
 var ed = [1,4,2,2,5,5,3,6];
 var cost = [12,32,8,21,7,2,12,9];
 var ind = [0,1,2,3,4,5,6,7]; //透過索引排序的技巧，存8條邊的索引，只排序索引再透過索引取cost跟st, ed，通常用在要排序的東西有很多property要取的時候
-var total_edge = 7;
+var total_edge = 8;
 var total_cost = 0;
 var choosed_edge = []; //用來記錄用的 choosed_edge[1]= true代表，邊1有被選中
 
@@ -54,7 +54,7 @@ var i = 0;
 while(i<total_edge){
       var vx1 = findRoot(st[ind[i]]);
       var vx2 = findRoot(ed[ind[i]]);
-      if(vx1 !== vx2 || (vx1 === -1 && vx2 === -1)){//不同set
+      if(vx1 !== vx2){//不同set
            disjoint_set[vx2] = vx1;
            total_cost = total_cost + cost[ind[i]];
            choosed_edge[ind[i]] = true;
