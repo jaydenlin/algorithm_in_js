@@ -67,3 +67,9 @@ console.log(choosed_edge);
 console.log(total_cost);
 
 //Kruskal演算法，就是將disjoint set不斷加上邊的過程
+
+//預備知識
+//1.  disjoint set，用陣列表示tree的技巧
+//2.  索引排序, 只排索引，來取property
+//3.  紀錄邊的技巧st, ed, cost
+//4.  sort的compare funciton怎麼寫 a - b 小到大，b - a 大到小
