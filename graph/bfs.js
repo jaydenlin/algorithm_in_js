@@ -17,6 +17,7 @@ var bfs = function (start) {
     var cur = graph[start];
     while(queue.length > 0){
         //enqueue
+        //把還沒拜訪過的，以及尚未被放進queue的都放進queue
         for(var i=0; i< cur.length; i++){
             if(visisted[cur[i]]===undefined && queue.indexOf(cur[i])===-1){
                 queue.push(cur[i]);

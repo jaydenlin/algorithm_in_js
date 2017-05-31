@@ -19,9 +19,9 @@ var dfs = function (start) {
     visisted[start]=true;
 
     //find the next
-    //the resursive function in the fo loop will be ended
     for (i; i < graph[start].length; i++) {
         var cur = graph[start][i];
+        //終止條件
         if (visisted[cur] === undefined) {
             dfs(cur);
         }
