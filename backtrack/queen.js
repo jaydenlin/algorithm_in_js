@@ -8,7 +8,7 @@ var queen = function (i) {
             console.log(col);
             result.push(col);
         } else {
-            //放放看各種位置，即數的分支
+            //放放看各種位置，即樹的分支
             for (var j = 0; j < n; j++) {
                 col[i + 1] = j;
                 queen(i + 1);
