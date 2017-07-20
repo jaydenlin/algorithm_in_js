@@ -36,6 +36,7 @@ var promising = function(i){
     } else {
         var j = 0;
         //檢查點是否已經有出現過了
+        //j < i 代表review i 層前的選擇
         while(j < i && switchNode){
             if(result[i] === result[j]){
                 switchNode = false;
