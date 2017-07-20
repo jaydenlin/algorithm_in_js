@@ -24,3 +24,6 @@ var promising = function(i, weight, total){
 };
 // console.log(total);
 sum(-1, 0, total);
+//重點摘要
+//1. 自子節點要存的值，可以透過遞迴在函數參數裡傳遞
+//2. 不一定要用for迴圈展開子樹，也可以用兩個地回來展開
