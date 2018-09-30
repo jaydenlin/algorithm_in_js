@@ -3,6 +3,7 @@
  * 1. 透過一個 delta 值 diagonal 在最外圍，來調整i, j 的值
  * 2. 先想 i.j 之間的關係，再來套用 delta 值 diagonal 
  * e.g. i 的變化由 0 => 4 變成 0  => 3 變成 0  => 2 變成 0  => 1 變成 0  => 0
+ *      j 的變化和 i 的值有關係
  */
 const run = function(){
     const n = 5;
