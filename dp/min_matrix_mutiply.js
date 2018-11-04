@@ -26,14 +26,20 @@ var min = function(n){
             }
             if(i<j) {
                 // k 介於 i 和 j-1 之間
-                // var temp = null;
+                var temp = null;
                 for(var k=i;k<j;k++) {    
                     //注意 d 的位置要確切的對上
                     //例如當 i 等於 k 的時候，使用 d[${i}]*d[${k}]*d[${j}] 就會出錯
                     console.log(`M[${i}][${k}] + M[${k+1}][${j}] + d[${i}]*d[${k+1}]*d[${j+1}]`);
                     console.log(M[i][k] + M[k+1][j] + d[i]*d[k+1]*d[j+1]);
-                    M[i][j] = M[i][k] + M[k+1][j] + d[i]*d[k+1]*d[j+1];
+                    if(temp === null ) {
+                        temp = M[i][k] + M[k+1][j] + d[i]*d[k+1]*d[j+1];
+                    } else {
+                        temp = Math.min(temp, M[i][k] + M[k+1][j] + d[i]*d[k+1]*d[j+1]);
+                    }
+                    
                 }
+                M[i][j] = temp;
                 
                 
             }
